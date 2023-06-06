@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cci7j8mlqvhhg"]
+
+[ext_resource type="PackedScene" uid="uid://cmxgimks3ie13" path="res://addons/lilmusicplayer/lil_music_player.tscn" id="1_edy0h"]
+
+[node name="TestContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LilMusicPlayer" parent="." instance=ExtResource("1_edy0h")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 226.0
+offset_bottom = 78.0

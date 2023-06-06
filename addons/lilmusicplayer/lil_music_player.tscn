@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmxgimks3ie13"]
+
+[ext_resource type="Script" path="res://addons/lilmusicplayer/lil_music_player.gd" id="1_exegm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_517oa"]
+font_size = 14
+
+[node name="LilMusicPlayer" type="Panel"]
+offset_left = 593.0
+offset_top = 306.0
+offset_right = 819.0
+offset_bottom = 384.0
+script = ExtResource("1_exegm")
+
+[node name="WidgetContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="MinimizeButton" type="Button" parent="WidgetContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="PlayerContainer" type="Control" parent="WidgetContainer"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WidgetContainer/PlayerContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Title" type="Control" parent="WidgetContainer/PlayerContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="NowPlayingLabel" type="Label" parent="WidgetContainer/PlayerContainer/VBoxContainer/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Now playing: sdamosdaod"
+label_settings = SubResource("LabelSettings_517oa")
+vertical_alignment = 1
+
+[node name="MusicProgressBar" type="ProgressBar" parent="WidgetContainer/PlayerContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+mouse_filter = 2
+max_value = 1.0
+show_percentage = false
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="WidgetContainer/PlayerContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="PlayPauseButton" type="Button" parent="WidgetContainer/PlayerContainer/VBoxContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(30, 10)
+layout_mode = 2
+
+[node name="PlayPauseButton2" type="Button" parent="WidgetContainer/PlayerContainer/VBoxContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+
+[node name="Offset" type="Control" parent="WidgetContainer/PlayerContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
